@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    text-align: center;
+    background-image: url(https://images.unsplash.com/photo-1614850523011-8f49ffc73908?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin-bottom: 20px;
+}
+.color-wheel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(#f22 0% 8.333%, #f06 8.333% 16.667%, #63b 16.667% 25%, #44b 25% 33.333%, #09f 33.333% 41.667%, #0af 41.667% 50%, #0bd 50% 58.333%, #098 58.333% 66.667%, #0a4 66.667% 75%, #7c3 75% 83.333%, #fe0 83.333% 91.667%, #fb0 91.667% 100%);
+    transform: rotate(-15deg);
+    animation: rotateWheel 1.5s ease-in-out;
+}
+
+.color-wheel::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: white;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color-wheel:hover {
+    animation: rotateWheelReverse 1.5s ease-in-out forwards;
+}
+
+@keyframes rotateWheel {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateWheelReverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
